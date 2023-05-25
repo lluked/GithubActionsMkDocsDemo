@@ -1,0 +1,10 @@
+site_name: mkdocs
+extra_css:
+    - css/extra.css
+
+nav:
+    - Home: index.md
+    - Pages:
+        {% for dict_item in pages -%}
+        - {{ dict_item['title'] }}: pages/test_{{ dict_item['title'].lower().replace(" ", "_") }}.md
+        {% endfor -%}
